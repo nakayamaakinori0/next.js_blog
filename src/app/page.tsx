@@ -1,9 +1,16 @@
 import ArticleList from "./components/ArticleList";
-export default function Home() {
+
+export default async function Home() {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  const res = await fetch(`${API_URL}/api`, { cache: "no-store" });
+  const articles = await res.json();
+  console.log("### articles", articles);
+
   return (
     <div className="md:flex">
       <section className="w-full md:w-2/3 flex flex-col items-center px-3 md:pl-6">
-        <ArticleList></ArticleList>
+        <ArticleList articles={articles}></ArticleList>
       </section>
 
       <aside className="w-full md:w-1/3 flex flex-col items-center px-3 md:pl-6">

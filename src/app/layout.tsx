@@ -1,4 +1,7 @@
 import "./globals.css";
+import { Suspense } from "react";
+import Loading from "./loading";
+
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -10,9 +13,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="container mx-auto bg-slate-700 text-slate-50">
-        <Header></Header>
-        {children}
-        <Footer></Footer>
+        <div className="flex flex-col min-h-screen">
+          <Header></Header>
+          <main className="flex-grow">
+            <Suspense fallback={<Loading></Loading>}>{children}</Suspense>
+          </main>
+          <Footer></Footer>
+        </div>
       </body>
     </html>
   );

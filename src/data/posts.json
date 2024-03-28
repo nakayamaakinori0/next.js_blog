@@ -11,6 +11,12 @@
       "title": "JSONサーバー",
       "content": "JSONサーバーを使ってAPIを作成する",
       "createdAt": "2022/02/01"
+    },
+    {
+      "id": "nextjs.13.test",
+      "title": "Nextjs.13のappディレクトリについて",
+      "content": "appディレクトリはデフォルトでサーバサイドレンダリングを行います。",
+      "createdAt": "2024-02-25T18:11:23.428Z"
     }
   ]
 }
